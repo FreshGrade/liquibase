@@ -9,12 +9,12 @@
     <parent>
         <groupId>org.liquibase</groupId>
         <artifactId>liquibase-parent</artifactId>
-        <version>3.5.2.FRESHGRADE</version>
+        <version>3.5.3.FRESHGRADE-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <properties>
-        <liquibase.version>3.5.2.FRESHGRADE</liquibase.version>
+        <liquibase.version>3.5.3.FRESHGRADE-SNAPSHOT</liquibase.version>
     </properties>
 
     <dependencies>

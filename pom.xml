@@ -4,7 +4,7 @@
 
     <groupId>org.liquibase</groupId>
     <artifactId>liquibase-parent</artifactId>
-    <version>3.5.2.FRESHGRADE</version>
+    <version>3.5.3.FRESHGRADE-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Liquibase Parent Configuration</name>
@@ -31,7 +31,7 @@
         <connection>scm:git:git@github.com:FreshGrade/liquibase.git</connection>
         <url>https://github.com/FreshGrade/liquibase</url>
         <developerConnection>scm:git:git@github.com:FreshGrade/liquibase.git</developerConnection>
-        <tag>liquibase-parent-3.5.2.FRESHGRADE</tag>
+        <tag>HEAD</tag>
   </scm>
 
     <developers>
