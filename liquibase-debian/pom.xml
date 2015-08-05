@@ -3,13 +3,13 @@
     <parent>
         <groupId>org.liquibase</groupId>
         <artifactId>liquibase-parent</artifactId>
-        <version>3.5.1.FRESHGRADE-SNAPSHOT</version>
+        <version>3.5.1.FRESHGRADE</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>liquibase-debian</artifactId>
     
-    <version>3.5.1.FRESHGRADE-SNAPSHOT</version>
+    <version>3.5.1.FRESHGRADE</version>
     <name>Liquibase Debian Packager</name>
     <description>Debian package builder for liquibase.</description>
      <organization>
