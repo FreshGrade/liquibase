@@ -5,6 +5,7 @@ import liquibase.database.AbstractJdbcDatabase;
 import liquibase.database.DatabaseConnection;
 import liquibase.database.ObjectQuotingStrategy;
 import liquibase.database.jvm.JdbcConnection;
+import liquibase.exception.LiquibaseException;
 import liquibase.structure.DatabaseObject;
 import liquibase.exception.DatabaseException;
 import liquibase.executor.ExecutorService;
@@ -105,25 +106,13 @@ public class PostgresDatabase extends AbstractJdbcDatabase {
     }
 
 
-//    public void dropDatabaseObjects(String schema) throws DatabaseException {
-//        try {
-//            if (schema == null) {
-//                schema = getConnectionUsername();
-//            }
-//            new Executor(this).execute(new RawSqlStatement("DROP OWNED BY " + schema));
-//
-//            getConnection().commit();
-//
-//            changeLogTableExists = false;
-//            changeLogLockTableExists = false;
-//            changeLogCreateAttempted = false;
-//            changeLogLockCreateAttempted = false;
-//
-//        } catch (SQLException e) {
-//            throw new DatabaseException(e);
-//        }
-//    }
+    @Override
+    public void dropDatabaseObjects(final CatalogAndSchema schemaToDrop) throws LiquibaseException, DatabaseException {
+        ExecutorService.getInstance().getExecutor(this).execute(new RawSqlStatement("DROP OWNED BY " + schemaToDrop.getSchemaName()));
+        getConnection().commit();
 
+        super.dropDatabaseObjects(schemaToDrop);
+    }
 
     @Override
     public boolean isSystemObject(DatabaseObject example) {

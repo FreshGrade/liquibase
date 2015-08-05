@@ -28,10 +28,10 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:git@github.com:liquibase/liquibase.git</connection>
-        <url>scm:git:git@github.com:liquibase/liquibase.git</url>
-        <developerConnection>scm:git:git@github.com:liquibase/liquibase.git</developerConnection>
-      <tag>HEAD</tag>
+        <connection>scm:git:git@github.com:FreshGrade/liquibase.git</connection>
+        <url>https://github.com/FreshGrade/liquibase</url>
+        <developerConnection>scm:git:git@github.com:FreshGrade/liquibase.git</developerConnection>
+        <tag>HEAD</tag>
   </scm>
 
     <developers>
@@ -373,16 +373,14 @@
     </reporting>
 
     <distributionManagement>
-        <repository>
-            <id>sonatype-nexus-staging</id>
-            <name>Sonatype Production Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
         <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sontatype Snapshot Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>FreshGrade-Snapshots</id>
+            <url>https://nexus.onboarding.freshgrade.com/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>FreshGrade-Releases</id>
+            <url>https://nexus.onboarding.freshgrade.com/nexus/content/repositories/releases</url>
+        </repository>
     </distributionManagement>
 
     <profiles>
