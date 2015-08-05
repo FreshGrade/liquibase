@@ -108,7 +108,8 @@ public class PostgresDatabase extends AbstractJdbcDatabase {
 
     @Override
     public void dropDatabaseObjects(final CatalogAndSchema schemaToDrop) throws LiquibaseException, DatabaseException {
-        ExecutorService.getInstance().getExecutor(this).execute(new RawSqlStatement("DROP OWNED BY " + schemaToDrop.getSchemaName()));
+        String userName = getConnection().getConnectionUserName();
+        ExecutorService.getInstance().getExecutor(this).execute(new RawSqlStatement("DROP OWNED BY " + userName));
         getConnection().commit();
 
         super.dropDatabaseObjects(schemaToDrop);
